@@ -24,7 +24,7 @@
 
 ## 🏗️ 3. Cấu trúc dự án
 Dự án được tổ chức theo tiêu chuẩn nghiên cứu khoa học:
-text
+```text
 Movie-Recsys-VN/
 ├── data/               
 ├── experiments/        
@@ -35,7 +35,7 @@ Movie-Recsys-VN/
 ├── src/               
 ├── .gitignore          
 └── requirements.txt
-
+```
 ## 📊 4. Kết quả thực nghiệm
 Hệ thống được đánh giá dựa trên tập 1000 người dùng ngẫu nhiên. Kết quả cho thấy sự vượt trội rõ rệt của mô hình Hybrid tích hợp ngôn ngữ.
 
