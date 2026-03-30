@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+data/raw/
+data/processed/
+weights/*.pt
+weights/*.bin
+
+.DS_Store
