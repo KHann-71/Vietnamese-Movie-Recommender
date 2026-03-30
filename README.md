@@ -24,14 +24,30 @@
 
 ## 🏗️ 3. Cấu trúc dự án
 Dự án được tổ chức theo tiêu chuẩn nghiên cứu khoa học:
-```text
+text
 Movie-Recsys-VN/
-├── data/               # Quản lý dữ liệu (Hướng dẫn tải ML-25M & TMDB)
-├── experiments/        # Lộ trình nghiên cứu & thực nghiệm
-│   ├── 01_eda/         # Phân tích dữ liệu & Tiền xử lý (Rating >= 4.0)
-│   ├── 02_benchmarks/  # Các mô hình đối chứng (Popularity, EASE)
-│   ├── 03_collab/      # Lọc cộng tác (ALS, lite-SASRec)
-│   └── 04_advanced/    # Trùm cuối: PhoBERT + NeuMF (Hybrid Model)
-├── src/                # Mã nguồn tiện ích (Hàm tính Recall@K, nDCG@K)
-├── .gitignore          # Chặn các file rác và dữ liệu nặng (>100MB)
-└── requirements.txt    # Danh sách thư viện cần cài đặt
+├── data/               
+├── experiments/        
+│   ├── 01_eda/        
+│   ├── 02_benchmarks/ 
+│   ├── 03_collab/      
+│   └── 04_advanced/    
+├── src/               
+├── .gitignore          
+└── requirements.txt
+
+## 📊 4. Kết quả thực nghiệm
+Hệ thống được đánh giá dựa trên tập 1000 người dùng ngẫu nhiên. Kết quả cho thấy sự vượt trội rõ rệt của mô hình Hybrid tích hợp ngôn ngữ.
+
+| Mô hình (Model) | Recall@10 | nDCG@10 | Cải thiện (vs Baseline) |
+| :--- | :---: | :---: | :---: |
+| Popularity (Baseline) | 0.0350 | 0.1149 | - |
+| ALS | 0.0410 | 0.1250 | +8.7% |
+| EASE | 0.0520 | 0.1802 | +56.8% |
+| **NeuMF (Deep Learning)** | 0.0590 | 0.2115 | +84.1% |
+| **BERT-NeuMF (Ours)** | **0.0616** | **0.2720** | **+136.7%** |
+
+> **Nhận xét chính:** Việc sử dụng **PhoBERT** để trích xuất đặc trưng nội dung tiếng Việt giúp mô hình BERT-NeuMF tăng **~28%** hiệu năng so với mô hình NeuMF truyền thống chỉ dựa trên tương tác.
+
+
+
